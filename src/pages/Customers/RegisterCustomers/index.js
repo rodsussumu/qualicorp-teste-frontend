@@ -5,6 +5,7 @@ import InputMask from "react-input-mask";
 import { Wrapper } from "./styles";
 import buscaCep from "../../../modules/cepPromise";
 import api from "../../../api";
+import NavBar from "../../../components/NavBar";
 
 export default function RegisterCustomers() {
   const {
@@ -54,6 +55,7 @@ export default function RegisterCustomers() {
   return (
     <>
       <Wrapper>
+        <NavBar />
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="nome"

@@ -12,8 +12,20 @@ export const Nav = styled.nav`
     display: flex;
     align-items: center;
     margin-right: -24px;
-    white-space: nowrap;
     width: 100%;
+    justify-content: space-around;
+    height: 80px;
+    .nav-link {
+      display: flex;
+      justify-content: space-between;
+      a {
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+      }
+    }
+
     @media screen and (max-width: 768px) {
       height: 100%;
       width: 50%;
@@ -29,22 +41,6 @@ export const Nav = styled.nav`
     transition: 0.2s ease-in;
     margin-right: 0px;
     z-index: 10;
-  }
-
-  .nav-link {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    &.active {
-      color: #15cdfc;
-    }
   }
 `;
 

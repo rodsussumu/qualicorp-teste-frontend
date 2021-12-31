@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 30px 150px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   form {
     display: flex;
+    flex: 1;
     flex-direction: column;
+    padding: 30px 40px;
+    height: 100vh;
+    background-color: #f0f0f0;
   }
 
   .button-submit {
@@ -29,7 +35,6 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 30px 30px;
     .button-submit {
       width: 40%;
     }

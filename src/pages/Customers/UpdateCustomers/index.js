@@ -7,6 +7,7 @@ import buscaCep from "../../../modules/cepPromise";
 import api from "../../../api";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import NavBar from "../../../components/NavBar";
 
 export default function UpdateCustomers() {
   const {
@@ -83,6 +84,7 @@ export default function UpdateCustomers() {
   return (
     <>
       <Wrapper>
+        <NavBar />
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="nome"

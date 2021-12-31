@@ -68,10 +68,6 @@ export default function ModalCustomer({ openModal, setOpenModal, id }) {
     complemento: "",
   });
 
-  const handleClickOpen = () => {
-    setOpenModal(true);
-  };
-
   const handleCloseModal = () => {
     setOpenModal(false);
   };
@@ -79,13 +75,15 @@ export default function ModalCustomer({ openModal, setOpenModal, id }) {
   const getCustomer = () => {
     api
       .get(`/customer/${id}`)
-      .then((resp) => setCustomer(resp.data))
+      .then((resp) => {
+        setCustomer(resp.data);
+      })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getCustomer();
-  }, []);
+  }, [openModal]);
 
   return (
     <div>

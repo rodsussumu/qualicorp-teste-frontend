@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 30px 150px;
-  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   .customers {
     display: flex;
+    flex: 1;
     flex-direction: column;
+    padding: 30px 40px;
+    height: 100%;
+    background-color: #f0f0f0;
   }
 
   .customer {
@@ -19,10 +24,25 @@ export const Wrapper = styled.div`
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     background: #fff;
+    height: 80px;
+  }
+
+  .customer-data {
+    display: flex;
+    align-items: center;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      margin-left: 20px;
+      cursor: pointer;
+    }
   }
 
   @media screen and (max-width: 768px) {
-    padding: 30px 30px;
     .customer {
       display: flex;
       flex-direction: column;

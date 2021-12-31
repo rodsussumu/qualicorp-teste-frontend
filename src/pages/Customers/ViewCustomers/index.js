@@ -6,11 +6,13 @@ import { GrView } from "react-icons/gr";
 import { MdDelete, MdEdit } from "react-icons/md";
 import ModalDelete from "../../../components/ModalDeleteCustomer";
 import { useHistory } from "react-router-dom";
+import NavBar from "../../../components/NavBar";
 
 export default function ViewCustomers() {
   const [customers, setCustomers] = useState([]);
-  const [customer, setCustomer] = useState();
-  const [customerDelete, setCustomerDelete] = useState();
+
+  const [customer, setCustomer] = useState("");
+  const [customerDelete, setCustomerDelete] = useState("");
 
   const [modal, setModal] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
@@ -31,6 +33,8 @@ export default function ViewCustomers() {
   return (
     <>
       <Wrapper>
+        {console.log(customer)}
+        <NavBar />
         <div className="customers">
           {customers.map((e, index) => {
             return (
@@ -42,8 +46,8 @@ export default function ViewCustomers() {
                   <div className="icons">
                     <GrView
                       onClick={() => {
-                        setModal(true);
                         setCustomer(e._id);
+                        setModal(true);
                       }}
                     />
 
