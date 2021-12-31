@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 
   .button-submit {
-    width: 40%;
+    max-width: 200px;
     margin-top: 30px;
     align-self: center;
     height: 40px;
@@ -22,6 +22,13 @@ export const Wrapper = styled.div`
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .button-submit:hover {
+    transition: 0.3s ease-in;
+    background-color: #a1869e;
+    color: #fff;
   }
 
   .input-form {
@@ -45,6 +52,7 @@ export const Wrapper = styled.div`
 
     .button-submit {
       width: 40%;
+      font-size: 0.8rem;
     }
   }
 `;
