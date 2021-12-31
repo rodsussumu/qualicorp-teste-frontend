@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    form {
+  form {
     display: flex;
     flex-direction: column;
-    padding: 30px 150px;
+    padding: 30px 350px;
     height: 100%;
     background-color: #f0f0f0;
   }
@@ -30,7 +30,15 @@ export const Wrapper = styled.div`
     color: red;
   }
 
+  @media screen and (max-width: 1024px) {
+    form {
+      padding: 30px 60px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
+    display: block;
+
     .button-submit {
       width: 40%;
     }

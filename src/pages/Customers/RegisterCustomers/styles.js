@@ -4,12 +4,12 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   form {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 30px 40px;
-    height: 100vh;
+    padding: 30px 350px;
     background-color: #f0f0f0;
   }
 
@@ -34,7 +34,15 @@ export const Wrapper = styled.div`
     color: red;
   }
 
+  @media screen and (max-width: 1024px) {
+    form {
+      padding: 30px 60px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
+    display: block;
+
     .button-submit {
       width: 40%;
     }

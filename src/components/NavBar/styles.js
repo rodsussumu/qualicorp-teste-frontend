@@ -64,6 +64,7 @@ export const Times = styled(FaTimes)`
     display: block;
     position: absolute;
     right: 0;
+    top: 0; 
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;

@@ -43,9 +43,11 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    display: block;
     .customer {
       display: flex;
       flex-direction: column;
+      height: 200px;
     }
     .customer-data {
       margin: 10px 0px;
