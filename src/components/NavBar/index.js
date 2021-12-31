@@ -8,17 +8,11 @@ export default function Navbar() {
         <Bars onClick={() => setOpen(!open)} />
         <div className={open ? "nav-menu open" : "nav-menu"}>
           <Times onClick={() => setOpen(!open)} />
-          <div className="nav-link" to="/customers">
-            Criar
+          <div className="nav-link" to="/create/customers">
+            <a href="/create/customers">Criar</a>
           </div>
-          <div className="nav-link" to="/customers">
-            Listar
-          </div>
-          <div className="nav-link" to="/customers">
-            Atualizar
-          </div>
-          <div className="nav-link" to="/customers">
-            Deletar
+          <div className="nav-link">
+            <a href="/all/customers">Clientes</a>
           </div>
         </div>
       </Nav>
