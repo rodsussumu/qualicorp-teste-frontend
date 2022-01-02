@@ -10,7 +10,7 @@
 ## Clonando repositorio
 
 ```
-git clone git@github.com:rodsussumu/qualicorp-teste-frontend.git
+git clone https://github.com/rodsussumu/qualicorp-teste-frontend.git
 ```
 
 ## Instalando dependencias 
