@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaArrowLeft } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: #000;
@@ -54,6 +54,17 @@ export const Nav = styled.nav`
     margin-right: 0px;
     z-index: 10;
   }
+
+  @media screen and (max-width: 768px) {
+    .visible {
+      display: block;
+      position: absolute;
+      left: 0;
+      transform: translate(100%, 75%);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  }
 `;
 
 export const Bars = styled(FaBars)`
@@ -67,6 +78,11 @@ export const Bars = styled(FaBars)`
     font-size: 1.8rem;
     cursor: pointer;
   }
+`;
+
+export const Back = styled(FaArrowLeft)`
+  display: none;
+  color: #fff;
 `;
 
 export const Times = styled(FaTimes)`

@@ -40,8 +40,9 @@ export default function ViewCustomers() {
             return (
               <>
                 <div className="customer">
-                  <div className="customer-data">{e.nome}</div>
-                  <div className="customer-data">{e.sobrenome}</div>
+                  <div className="customer-data">
+                    {e.nome} {e.sobrenome}
+                  </div>
                   <div className="customer-data">{e.email}</div>
                   <div className="icons">
                     <GrView

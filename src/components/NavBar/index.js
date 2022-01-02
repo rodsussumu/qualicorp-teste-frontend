@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-import { Bars, Nav, Times } from "./styles";
-export default function Navbar() {
+import { Bars, Nav, Times, Back } from "./styles";
+import { useHistory } from "react-router-dom";
+export default function Navbar({ visible }) {
   const [open, setOpen] = useState(false);
+  const history = useHistory();
   return (
     <>
       <Nav>
+        <Back
+          className={visible ? "visible" : ""}
+          onClick={() => {
+            history.goBack();
+          }}
+        />
         <Bars onClick={() => setOpen(!open)} />
         <div className={open ? "nav-menu open" : "nav-menu"}>
           <Times onClick={() => setOpen(!open)} />

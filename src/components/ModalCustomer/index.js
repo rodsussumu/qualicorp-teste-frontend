@@ -97,8 +97,9 @@ export default function ModalCustomer({ openModal, setOpenModal, id }) {
         </DialogTitle>
         <DialogContent dividers>
           <Data>
-            <div className="data-customer">Nome: {customer.nome}</div>
-            <div className="data-customer">Sobrenome: {customer.sobrenome}</div>
+            <div className="data-customer">
+              Nome: {customer.nome} {customer.sobrenome}
+            </div>
             <div className="data-customer">Email: {customer.email}</div>
             <div className="data-customer">Telefone: {customer.telefone}</div>
             <div className="data-customer">CPF: {customer.cpf}</div>

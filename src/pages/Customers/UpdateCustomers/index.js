@@ -84,7 +84,7 @@ export default function UpdateCustomers() {
   return (
     <>
       <Wrapper>
-        <NavBar />
+        <NavBar visible={true} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="nome"
@@ -284,7 +284,7 @@ export default function UpdateCustomers() {
           />
 
           <button type="submit" className="button-submit">
-            Adicionar Cliente
+            Atualizar cliente
           </button>
         </form>
       </Wrapper>

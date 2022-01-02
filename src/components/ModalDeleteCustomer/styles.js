@@ -8,7 +8,6 @@ export const FormSection = styled.div`
   }
 
   button.btn {
-    font-family: "Avenir Next GEO W05 bold";
     padding: 7px 15px;
     background: #f3ecff;
     border: 1px #8f6ad1 solid;

@@ -11,11 +11,13 @@ export const Wrapper = styled.div`
     padding: 30px 40px;
     height: 100%;
     background-color: #f0f0f0;
+    align-items: center;
   }
 
   .customer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 800px;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 20px;
     font-size: 1.2rem;
     padding: 20px;
@@ -37,7 +39,7 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     svg {
-      margin-left: 20px;
+      padding: 0px 20px;
       cursor: pointer;
     }
   }
@@ -48,6 +50,16 @@ export const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       height: 200px;
+      width: 100%;
+    }
+
+    .icons {
+      margin-top: 20px;
+      justify-content: flex-start;
+      svg {
+        padding: 0px;
+        padding-right: 20px;
+      }
     }
     .customer-data {
       margin: 10px 0px;
