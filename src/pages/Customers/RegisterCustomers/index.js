@@ -99,7 +99,6 @@ export default function RegisterCustomers() {
               <TextField
                 className="input-form"
                 {...field}
-                pattern
                 label="Email"
                 {...register("email", {
                   required: true,
@@ -118,7 +117,7 @@ export default function RegisterCustomers() {
           <Controller
             name="telefone"
             control={control}
-            rules={{ required: false }}
+            rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <InputMask
                 mask="(99) 99999-9999"
@@ -128,7 +127,9 @@ export default function RegisterCustomers() {
                 {(inputProps) => (
                   <TextField
                     className="input-form"
-                    error={!!errors.phone?.message}
+                    {...register("telefone", {
+                      required: true,
+                    })}
                     label="Telefone"
                   />
                 )}
@@ -140,7 +141,7 @@ export default function RegisterCustomers() {
           <Controller
             name="cpf"
             control={control}
-            rules={{ required: false }}
+            rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <InputMask
                 mask="999.999.999-99"
@@ -150,7 +151,9 @@ export default function RegisterCustomers() {
                 {(inputProps) => (
                   <TextField
                     className="input-form"
-                    error={!!errors.phone?.message}
+                    {...register("cpf", {
+                      required: true,
+                    })}
                     label="CPF"
                   />
                 )}
@@ -162,14 +165,14 @@ export default function RegisterCustomers() {
           <Controller
             name="cep"
             control={control}
-            rules={{ required: false }}
+            rules={{ required: true }}
             render={({ field }) => (
               <TextField
                 className="input-form"
                 {...field}
                 label="Cep"
                 onBlur={setCep(field.value)}
-                {...register("cep", { required: false })}
+                {...register("cep", { required: true })}
                 inputProps={{ maxLength: 8 }}
               />
             )}
@@ -242,13 +245,13 @@ export default function RegisterCustomers() {
           <Controller
             name="numero"
             control={control}
-            rules={{ required: false }}
+            rules={{ required: true }}
             render={({ field }) => (
               <TextField
                 className="input-form"
                 {...field}
                 label="Numero"
-                {...register("numero", { required: false })}
+                {...register("numero", { required: true })}
               />
             )}
           />
