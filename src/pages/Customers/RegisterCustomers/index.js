@@ -99,6 +99,7 @@ export default function RegisterCustomers() {
               <TextField
                 className="input-form"
                 {...field}
+                pattern
                 label="Email"
                 {...register("email", {
                   required: true,
@@ -125,13 +126,7 @@ export default function RegisterCustomers() {
                 onChange={onChange}
               >
                 {(inputProps) => (
-                  <TextField
-                    className="input-form"
-                    {...register("telefone", {
-                      required: true,
-                    })}
-                    label="Telefone"
-                  />
+                  <TextField className="input-form" label="Telefone" />
                 )}
               </InputMask>
             )}
@@ -149,13 +144,7 @@ export default function RegisterCustomers() {
                 onChange={onChange}
               >
                 {(inputProps) => (
-                  <TextField
-                    className="input-form"
-                    {...register("cpf", {
-                      required: true,
-                    })}
-                    label="CPF"
-                  />
+                  <TextField className="input-form" label="CPF" />
                 )}
               </InputMask>
             )}
