@@ -74,7 +74,7 @@ export default function RegisterCustomers() {
               />
             )}
           />
-          {errors.nome && <span className="error">Campo obrigatorio</span>}
+          {errors.nome && <span className="error">Campo obrigatório</span>}
 
           <Controller
             name="sobrenome"
@@ -89,7 +89,7 @@ export default function RegisterCustomers() {
               />
             )}
           />
-          {errors.sobrenome && <span className="error">Campo obrigatorio</span>}
+          {errors.sobrenome && <span className="error">Campo obrigatório</span>}
 
           <Controller
             name="email"
@@ -109,7 +109,7 @@ export default function RegisterCustomers() {
             )}
           />
           {errors.email?.type === "required" && (
-            <span className="error">Campo obrigatorio</span>
+            <span className="error">Campo obrigatório</span>
           )}
           {errors.email?.type === "pattern" && (
             <span className="error">Email invalido</span>
@@ -131,7 +131,7 @@ export default function RegisterCustomers() {
               </InputMask>
             )}
           />
-          {errors.telefone && <span className="error">Campo obrigatorio</span>}
+          {errors.telefone && <span className="error">Campo obrigatório</span>}
 
           <Controller
             name="cpf"
@@ -149,7 +149,7 @@ export default function RegisterCustomers() {
               </InputMask>
             )}
           />
-          {errors.cpf && <span className="error">Campo obrigatorio</span>}
+          {errors.cpf && <span className="error">Campo obrigatório</span>}
 
           <Controller
             name="cep"
@@ -166,7 +166,7 @@ export default function RegisterCustomers() {
               />
             )}
           />
-          {errors.cep && <span className="error">Campo obrigatorio</span>}
+          {errors.cep && <span className="error">Campo obrigatório</span>}
           {errors.cep && errors.cep.type === "maxLength" && (
             <span className="error">Digite apenas os números do CEP</span>
           )}
@@ -244,7 +244,7 @@ export default function RegisterCustomers() {
               />
             )}
           />
-          {errors.numero && <span className="error">Campo obrigatorio</span>}
+          {errors.numero && <span className="error">Campo obrigatório</span>}
 
           <Controller
             name="complemento"
