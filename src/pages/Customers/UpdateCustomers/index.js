@@ -130,7 +130,12 @@ export default function UpdateCustomers() {
               />
             )}
           />
-          {errors.email && <span className="error">Campo obrigatorio</span>}
+          {errors.email?.type === "required" && (
+            <span className="error">Campo obrigatorio</span>
+          )}
+          {errors.email?.type === "pattern" && (
+            <span className="error">Email invalido</span>
+          )}
 
           <Controller
             name="telefone"
@@ -185,7 +190,7 @@ export default function UpdateCustomers() {
                 className="input-form"
                 {...field}
                 label="Cep"
-                onChange={setCep(field.value)}
+                onBlur={setCep(field.value)}
                 {...register("cep", { required: false })}
                 inputProps={{ maxLength: 8 }}
               />
@@ -269,6 +274,7 @@ export default function UpdateCustomers() {
               />
             )}
           />
+          {errors.numero && <span className="error">Campo obrigatorio</span>}
 
           <Controller
             name="complemento"

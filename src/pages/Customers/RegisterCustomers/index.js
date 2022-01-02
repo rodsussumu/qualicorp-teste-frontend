@@ -99,12 +99,21 @@ export default function RegisterCustomers() {
               <TextField
                 className="input-form"
                 {...field}
+                pattern
                 label="Email"
-                {...register("email", { required: true })}
+                {...register("email", {
+                  required: true,
+                  pattern: /^\S+@\S+$/i,
+                })}
               />
             )}
           />
-          {errors.email && <span className="error">Campo obrigatorio</span>}
+          {errors.email?.type === "required" && (
+            <span className="error">Campo obrigatorio</span>
+          )}
+          {errors.email?.type === "pattern" && (
+            <span className="error">Email invalido</span>
+          )}
 
           <Controller
             name="telefone"
@@ -159,7 +168,7 @@ export default function RegisterCustomers() {
                 className="input-form"
                 {...field}
                 label="Cep"
-                onChange={setCep(field.value)}
+                onBlur={setCep(field.value)}
                 {...register("cep", { required: false })}
                 inputProps={{ maxLength: 8 }}
               />
@@ -243,6 +252,7 @@ export default function RegisterCustomers() {
               />
             )}
           />
+          {errors.numero && <span className="error">Campo obrigatorio</span>}
 
           <Controller
             name="complemento"
