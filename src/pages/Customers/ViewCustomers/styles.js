@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
   .customer {
     display: grid;
-    max-width: 800px;
+    width: 800px;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 20px;
     font-size: 1.2rem;
