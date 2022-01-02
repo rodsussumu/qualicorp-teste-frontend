@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
     display: grid;
     width: 800px;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
     margin-top: 20px;
     font-size: 1.2rem;
     padding: 20px;
