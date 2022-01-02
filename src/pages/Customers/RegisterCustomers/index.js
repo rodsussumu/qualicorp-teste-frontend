@@ -6,6 +6,7 @@ import { Wrapper } from "./styles";
 import buscaCep from "../../../modules/cepPromise";
 import api from "../../../api";
 import NavBar from "../../../components/NavBar";
+import { useHistory } from "react-router-dom";
 
 export default function RegisterCustomers() {
   const {
@@ -33,13 +34,16 @@ export default function RegisterCustomers() {
     },
   });
 
-  const [cep, setCep] = useState(false);
+  const history = useHistory();
 
+  const [cep, setCep] = useState(false);
+  const [errorApi, setErrorApi] = useState(false);
+  
   const onSubmit = (data) => {
     api
       .post("/customer", data)
-      .then((resp) => console.log(resp))
-      .catch((error) => console.log(error));
+      .then((resp) => history.push("/all/costumers"))
+      .catch((error) => setErrorApi(error.response.data.message));
   };
 
   useEffect(async () => {
@@ -253,7 +257,7 @@ export default function RegisterCustomers() {
               />
             )}
           />
-
+          {<span className="error-api">{errorApi}</span>}
           <button type="submit" className="button-submit">
             Adicionar Cliente
           </button>

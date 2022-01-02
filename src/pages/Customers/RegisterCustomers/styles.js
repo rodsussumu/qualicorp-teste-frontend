@@ -41,6 +41,13 @@ export const Wrapper = styled.div`
     color: red;
   }
 
+  .error-api {
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+  }
+
   @media screen and (max-width: 1024px) {
     form {
       padding: 30px 60px;

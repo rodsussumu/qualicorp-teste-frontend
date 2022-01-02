@@ -39,12 +39,13 @@ export default function UpdateCustomers() {
   const history = useHistory();
 
   const [cep, setCep] = useState(false);
+  const [errorApi, setErrorApi] = useState(false);
 
   const onSubmit = (data) => {
     api
       .put(`/customer/${id}`, data)
-      .then((resp) => history.push("/all/customers"))
-      .catch((error) => console.log(error));
+      .then((resp) => history.push("/all/costumers"))
+      .catch((error) => setErrorApi(error.response.data.message));
   };
 
   const getValue = () => {
@@ -282,6 +283,7 @@ export default function UpdateCustomers() {
               />
             )}
           />
+          {<span className="error-api">{errorApi}</span>}
 
           <button type="submit" className="button-submit">
             Atualizar cliente
