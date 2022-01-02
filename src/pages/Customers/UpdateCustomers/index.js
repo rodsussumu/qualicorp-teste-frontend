@@ -44,7 +44,7 @@ export default function UpdateCustomers() {
   const onSubmit = (data) => {
     api
       .put(`/customer/${id}`, data)
-      .then((resp) => history.push("/all/costumers"))
+      .then((resp) => history.push("/all/customers"))
       .catch((error) => setErrorApi(error.response.data.message));
   };
 

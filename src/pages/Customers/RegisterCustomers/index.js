@@ -38,11 +38,11 @@ export default function RegisterCustomers() {
 
   const [cep, setCep] = useState(false);
   const [errorApi, setErrorApi] = useState(false);
-  
+
   const onSubmit = (data) => {
     api
       .post("/customer", data)
-      .then((resp) => history.push("/all/costumers"))
+      .then((resp) => history.push("/all/customers"))
       .catch((error) => setErrorApi(error.response.data.message));
   };
 
