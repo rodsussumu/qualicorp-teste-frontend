@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   .customer {
     display: grid;
     width: 800px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 250px 250px 250px;
     grid-gap: 10px;
     margin-top: 20px;
     font-size: 1.2rem;
@@ -27,12 +27,12 @@ export const Wrapper = styled.div`
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     background: #fff;
-    height: 80px;
   }
 
   .customer-data {
     display: flex;
     align-items: center;
+    word-break: break-word;
   }
 
   .icons {
