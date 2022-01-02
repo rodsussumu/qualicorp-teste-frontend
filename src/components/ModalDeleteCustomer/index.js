@@ -1,19 +1,13 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
-import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
-import { FiCheckCircle } from "react-icons/fi";
-import { FormSection, MsgSuccess } from "./styles";
-import { useForm } from "react-hook-form";
+import { FormSection } from "./styles";
 import api from "../../api";
-
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 const styles = (theme) => ({
   root: {
@@ -58,32 +52,23 @@ const DialogContent = withStyles((theme) => ({
 }))(MuiDialogContent);
 
 export default function ModalDelete({ openModal, setOpenModal, id, refresh }) {
-  const {
-    handleSubmit,
-    formState,
-    formState: { errors },
-  } = useForm();
-  const [success, setSuccess] = React.useState(false);
-  const [load, setLoad] = React.useState(false);
-  const [errorApi, setErrorApi] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpenModal(true);
   };
+
   const handleCloseModal = () => {
     setOpenModal(false);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     api
       .delete(`/customer/${id}`)
-      .then((resp) => refresh())
+      .then((resp) => {
+        refresh();
+        handleCloseModal();
+      })
       .catch((error) => console.log(error));
   };
-
-  React.useEffect(() => {
-    setSuccess(false);
-  }, [openModal]);
 
   return (
     <div>
@@ -96,45 +81,37 @@ export default function ModalDelete({ openModal, setOpenModal, id, refresh }) {
           Deletar cliente
         </DialogTitle>
         <DialogContent dividers>
-          {success ? (
-            <MsgSuccess>
-              <div className="icon-area">
-                <FiCheckCircle />
-              </div>
-              <div className="message">Cliente deletado com sucesso</div>
-            </MsgSuccess>
-          ) : (
-            <FormSection>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="div-input">
-                  <div>
-                    <div className="actual-email">
-                      O cliente selecionado será excluido permanentemente,
-                      deseja continuar?
-                    </div>
-                    {errorApi && <span className="error-msg">{errorApi}</span>}
+          <FormSection>
+            <div className="delete">
+              <div className="div-input">
+                <div>
+                  <div className="actual-email">
+                    O cliente selecionado será excluido permanentemente, deseja
+                    continuar?
                   </div>
                 </div>
-                <div className="buttons">
-                  <button type="submit" className="btn">
-                    <span>Confirmar</span>{" "}
-                    {load && <CircularProgress size={15} />}{" "}
-                  </button>
-                  <button
-                    className="btn btn-delete"
-                    onClick={() => {
-                      setSuccess(false);
-                      setOpenModal(false);
-                    }}
-                  >
-                    {" "}
-                    <span>Cancelar</span>{" "}
-                    {load && <CircularProgress size={15} />}{" "}
-                  </button>
-                </div>
-              </form>
-            </FormSection>
-          )}
+              </div>
+              <div className="buttons">
+                <button
+                  type="submit"
+                  className="btn"
+                  onClick={() => {
+                    onSubmit();
+                  }}
+                >
+                  <span>Confirmar</span>
+                </button>
+                <button
+                  className="btn btn-delete"
+                  onClick={() => {
+                    setOpenModal(false);
+                  }}
+                >
+                  <span>Cancelar</span>
+                </button>
+              </div>
+            </div>
+          </FormSection>
         </DialogContent>
       </Dialog>
     </div>
